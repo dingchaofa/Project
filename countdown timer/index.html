@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ding-Countdown-Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="counttimer">
+        <header>
+            <div class="logo">
+                <img src="dcf.png" alt="">
+            </div>
+        </header>
+        <div class="ct">
+            <div class="counthou countcom">
+                <span class="countname">HOURS</span>
+                <div class="houjs"></div>
+                <div class="leftborder">
+                    <div class="leftday houleft-color common houcom"></div>
+                </div>
+                <div class="rightborder">
+                    <div class="rightday houright-color common houcom"></div>
+                </div>
+            </div>
+            <div class="countmin countcom">
+                <span class="countname movename">MINUTES</span>
+                <div class="minjs"></div>
+                <div class="leftborder">
+                    <div class="leftday minleft-color common mincom"></div>
+                </div>
+                <div class="rightborder">
+                    <div class="rightday minright-color common mincom"></div>
+                </div>
+            </div>
+            <div class="countsec countcom">
+                <div class="leftborder">
+                    <div class="leftday secleft-color common seccom"></div>
+                </div>
+                <div class="rightborder">
+                    <div class="rightday secright-color common seccom"></div>
+                </div>
+                <div class="tennum">
+                    <ul class="sixtime"></ul>
+                    <ul class="tentime">
+                        <li>0</li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                    </ul>
+                </div>
+                <span class="countname movename">SECONDS</span>
+            </div>
+            <div class="ms countcom">
+
+                <div class="leftborder">
+                    <div class="leftday msleft-color common mscom"></div>
+                </div>
+                <div class="rightborder">
+                    <div class="rightday msright-color common mscom"></div>
+                </div>
+                <div class="stopwatch"></div>
+                <span class="countname">MS</span>
+            </div>
+        </div>
+        <footer>
+            <div class="newstart foocom" title="重新开始">
+                <a href="">
+                    <div class="heart"></div>
+                </a>
+            </div>
+            <div class="start foocom"></div>
+        </footer>
+    </div>
+    <script>
+        /* 分钟计数 */
+        var minjs = choic('.minjs')
+        var countminnum = 0 //暂停时，记录运行了多少时间
+        minjs.innerText = 0
+        function transtionnum() {
+            var mi = parseInt((countminnum / 60)) //运行的秒数，化为分钟
+            if (mi >= 60) {
+                mi -= 60
+                minjs.innerText = mi
+            } else {
+                minjs.innerText = mi
+            }
+            countminnum++
+        }
+        /* 小时计数，暂时想不出来其它记数方法，暂且用JS代替 */
+        var houjs = choic('.houjs')
+        var ho = 0
+        houjs.innerText = ho
+
+        var secondhou = setInterval(function () {
+            if (mi >= 24) {
+                ho -= 24
+                houjs.innerText = 0
+            } else {
+                ho += 1
+                houjs.innerText = ho
+            }
+        }, 3600000)
+        /* 暂停开始按钮 */
+        var start = choic('.start')
+        var list = document.querySelectorAll('.tentime li')
+        var common = document.querySelectorAll('.common')
+        start.title = '开始';
+        start.addEventListener('click', handle, false)
+        function handle() {
+            if (start.style.backgroundPosition === '') {
+                //开始暂停状态根据开始\暂停图标判断
+                /*var secondmin = setInterval(pausenum,60000)*/
+                //直接60秒执行一次，无法记录暂停时执行30s时的时间
+                // var transtionmin
+                function stratsetInterval() {
+                    return transtionmin = setInterval(transtionnum, 1000)
+                    // return的结果不包括函数内部的变量
+                }
+                stratsetInterval();
+                //为了记录暂停时的运行的次数
+                //window.transtionmin
+                start.title = '暂停';
+                //title不属于css，类似于style
+                start.style.backgroundPosition = '0 -61px'
+                //开始后得到暂停图标
+                document.styleSheets[0].addRule('.stopwatch:before', 'animation-play-state: running');
+                document.styleSheets[0].addRule('.sixtime:before', 'animation-play-state: running');
+                //伪元素不属于DOM，无法用DOM操作
+                for (var u = 0; u < list.length; u++) {
+                    list[u].style.animationPlayState = 'running'
+                }
+                //开始秒数的动画
+                for (var k = 0; k < common.length; k++) {
+                    common[k].style.animationPlayState = 'running'
+                }
+                //开始进度条的动画
+            } else {  //else里的内容可以在if里找到对应的注释
+                clearInterval(transtionmin)
+                //定时器和清除定时器不能在同一个作用域内
+                start.title = '开始';
+                start.style.backgroundPosition = ''
+                document.styleSheets[0].addRule('.stopwatch:before', 'animation-play-state: paused');
+                document.styleSheets[0].addRule('.sixtime:before', 'animation-play-state: paused');
+                for (var u = 0; u < list.length; u++) {
+                    list[u].style.animationPlayState = 'paused'
+                }
+                for (var k = 0; k < common.length; k++) {
+                    common[k].style.animationPlayState = 'paused';
+                }
+            }
+            start.innerHTML = '<div class="heart"></div>' /* 绑定心形动画 */
+        }
+        function choic(id) {
+            return document.querySelector(id)
+        }
+    </script>
+</body>
+</html>

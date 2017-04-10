@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    background-color: #282828;
+}
+.logo {
+    text-align: center;
+    margin-top: 40px;
+}
+li {
+    list-style: none;
+}
+/* 布局 */
+.ct {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 60px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    width: 800px;
+    margin: 0 auto;
+    padding: 64px 0;
+}
+.countname {
+    position: absolute;
+    top: 103px;
+    left: 25px;
+    font-size: 12px;
+}
+.movename {
+    left: 7px;
+}
+.leftborder {
+    width: 35px;
+    height: 70px;
+    /*border: 1px solid;*/
+     overflow: hidden;
+    /*position: relative;
+    left: 60px;*/
+    order: 2;
+}
+.countcom {
+    display: flex;
+    position: relative;
+    margin: 20px;
+    left: -7px;
+}
+.common {
+    width: 70px;
+    height: 70px;
+    
+    border: 12px solid transparent;
+    border-radius: 50%;
+    background-color: #1E1E1E;
+    transform: rotate(-45deg);
+    position: relative;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+    /* common是leftborder和rightborder一样*/
+}
+.leftday {
+    left: -36px;
+    /*top: 15px;*/
+    /*animation: spin 2s infinite linear;*/
+    animation-name: spinleft;
+}
+@keyframes spinleft {
+    0% {
+        transform: rotate(-45deg);
+        /*border-top-color: #E21D2F;*/
+    }
+    50% {
+        transform: rotate(135deg);
+        /*border-top-color: #fff;*/
+    }
+    100% {
+        transform: rotate(135deg);
+        /*border-left-color: rgba(0, 0, 255, 0.6);*/
+    }
+}
+.rightborder {
+    width: 35px;
+    height: 70px;
+    overflow: hidden;
+    order: 1;
+}
+.rightday {
+    /*animation: spin 2s infinite linear;*/
+    animation-name: spinright;
+    /* rightday和 leftday是为了旋转相同*/
+}
+/* 周期 */
+.mscom {
+    animation-duration: 1s;
+}
+.seccom {
+    animation-duration: 60s;
+    
+    /*animation-delay: 5s; 设置延迟只能执行一次*/
+}
+.mincom {
+    animation-duration: 3600s;
+}
+.minjs {
+    position: absolute;
+    top: 24px;
+    left: 28px;
+    z-index: 10;
+}
+.houcom {
+    animation-duration: 86400s;
+}
+.houleft-color {
+    border-top: 12px solid #E21D2F;
+    border-left: 12px solid #E21D2F;
+}
+.houright-color{
+    border-bottom: 12px solid #E21D2F;
+    border-right: 12px solid #E21D2F;
+}
+.minleft-color{
+    border-top: 12px solid #23865A;
+    border-left: 12px solid #23865A;
+}
+.minright-color{
+    border-bottom: 12px solid #23865A;
+    border-right: 12px solid #23865A;
+}
+.secleft-color{
+    border-top: 12px solid #06A2CB;
+    border-left: 12px solid #06A2CB;
+}
+.secright-color{
+    border-bottom: 12px solid #06A2CB;
+    border-right: 12px solid #06A2CB;
+}
+.msleft-color{
+    border-top: 12px solid #E6A52F;
+    border-left: 12px solid #E6A52F;
+}
+.msright-color{
+    border-bottom: 12px solid #E6A52F;
+    border-right: 12px solid #E6A52F;
+}
+.houjs {
+    position: relative;
+    top: 22px;
+    left: 40px;
+    z-index: 10;
+}
+@keyframes spinright {
+    0% {
+        transform: rotate(-45deg);
+        /*border-top-color: #E21D2F;*/
+    }
+    50% {
+        transform: rotate(-45deg);
+        /*border-top-color: #fff;*/
+    }
+    100% {
+        transform: rotate(135deg);
+        /*border-left-color: rgba(0, 0, 255, 0.6);*/
+    }
+}
+/* 毫秒数 */
+.stopwatch {
+    display: inline-block;
+    width: 20px;
+    height: 20px; 
+    position: absolute;
+    left: 28px;
+    top: 25px;
+}
+.stopwatch:before {
+    animation: circle 1s infinite linear;
+    content: "0";
+    animation-play-state: paused;
+}
+@keyframes circle {
+    0% {
+        content: "0";
+    }
+    10%{
+        content: "1";
+    }
+    20%{
+        content: "2";
+    }
+    30%{
+        content: "3";
+    }
+    40%{
+        content: "4";
+    }
+    50% {
+        content: "5";
+    }
+    60%{
+        content: "6";
+    }
+    70%{
+        content: "7";
+    }
+    80%{
+        content: "8";
+    }
+    90%{
+        content: "9";
+    }
+    100% {
+        content: "0";
+    }
+}
+/* 秒数 */
+.tennum {
+    display: inline-block;
+    width: 40px;
+    height: 20px; 
+    position: absolute;
+    top: 26px;
+    left: 23px;
+    overflow: hidden;
+    display: flex;
+}
+.tentime li{
+    animation: licircle 10s infinite linear;
+    position: relative;
+    line-height: 18px;
+    animation-play-state: paused;
+    
+}
+@keyframes licircle {
+    0% {
+        top: 4px;/* （速度有点快）由于初始位置的原因，保证时间的准确性增加路程 */
+    }
+    100% {
+        top: -180px;  /* 必须和数字占的大小一致，否则时间不准 */
+    }
+}
+.sixtime {
+    width: 11px;
+}
+.sixtime::before {
+    position: relative;
+    animation: sixtimeani 60s infinite linear;
+    content: "";
+    animation-play-state: paused;
+    top: -2px;/* 令两位数字同样高 */
+    animation-delay: 5s;/* 会提前5s运行，问题待解决 */
+}
+@keyframes sixtimeani {
+    0% {
+        content: "";
+    }
+    16.667% {
+        content: "1"
+    }
+    33.333% {
+        content: "2"
+    }
+    50% {
+        content: "3"
+    }
+    66.667% {
+        content: "4"
+    }
+    83.335% {
+        content: "5"
+    }
+     100%  {
+         content: "";
+     }  
+}
+/* footer */
+footer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 76px;
+}
+.foocom {
+    /*border: 1px solid #eee;*/
+    background: #f6f1f1;
+    margin: 49px;
+    border-radius: 3px;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(result.png);
+    cursor: pointer;
+}
+.newstart {
+    background-position: 0 0;
+}
+.start {
+    background-position: 0 -29px;
+    
+}
+.pause {
+    background-position: 0 -58px;
+}
+.newstart a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+/* 心形动画 */
+.heart {
+    position: relative;
+    top: -23px;
+    left: -29px;
+    width: 100px;
+
+    height: 90px;
+    color: blue;
+    transform: scale(0,0);
+    animation: magic 1s;
+    animation-timing-function: cubic-bezier(0.27, 0.78, 0.58, 0.82);
+    /* animation-direction: alternate; */
+} 
+@keyframes magic {
+  0% {
+      transform: scale(0,0);
+  }
+  100% {
+    transform: scale(0.8,0.8);
+    opacity: 0.1;
+  }
+}
+.heart:before,
+.heart:after {
+    position: absolute;
+    content: "";
+    left: 40px;
+    top: 0;
+    width: 40px;
+    height: 70px;
+    background: hotpink;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+.heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+}
