@@ -19,19 +19,31 @@ li {
 /* 布局 */
 .ct {
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
     position: relative;
     top: 60px;
     border-top: 1px solid;
     border-bottom: 1px solid;
-    width: 800px;
+    max-width: 700px;
     margin: 0 auto;
     padding: 64px 0;
+}
+.counthou.countcom {
+    flex-grow: 2;
+    justify-content: center;
+}
+.countmin.countcom {
+    flex-grow: 1;
+}
+.ms.countcom {
+    flex-grow: 2;
+    justify-content: center;
+    text-align: center;
 }
 .countname {
     position: absolute;
     top: 103px;
-    left: 25px;
+    /*left: 25px;*/
     font-size: 12px;
 }
 .movename {
@@ -49,8 +61,8 @@ li {
 .countcom {
     display: flex;
     position: relative;
-    margin: 20px;
-    left: -7px;
+    /*margin: 20px;*/
+    /*left: -7px;*/
 }
 .common {
     width: 70px;
@@ -151,9 +163,8 @@ li {
     border-right: 12px solid #E6A52F;
 }
 .houjs {
-    position: relative;
+    position: absolute;
     top: 22px;
-    left: 40px;
     z-index: 10;
 }
 @keyframes spinright {
@@ -176,7 +187,7 @@ li {
     width: 20px;
     height: 20px; 
     position: absolute;
-    left: 28px;
+    /*left: 28px;*/
     top: 25px;
 }
 .stopwatch:before {
@@ -239,7 +250,7 @@ li {
 }
 @keyframes licircle {
     0% {
-        top: 4px;/* （速度有点快）由于初始位置的原因，保证时间的准确性增加路程 */
+        top: 3px;/* （速度有点快）由于初始位置的原因，保证时间的准确性增加路程 */
     }
     100% {
         top: -180px;  /* 必须和数字占的大小一致，否则时间不准 */
