@@ -1,0 +1,180 @@
+.square {
+            height: 100px;
+            width: 100px;      
+            transform: rotate(45deg);
+            background: linear-gradient(to bottom right, #F0CDAD, #afb155);
+        }
+        .tri {
+            transform: scaleY(0.58);           
+        }
+        .leftaside {
+            background: linear-gradient(to bottom right, #F0CDAD, #8D5F48);
+        }
+        .trileft{
+            transform: scaleY(0.58);
+        }
+        .left {
+            position: absolute;
+            left: 35px;
+            top: 61px;
+            transform: rotate(120deg);
+        }
+        .triright {
+            transform: scaleY(0.58);
+        }
+        .right {
+            position: absolute;
+            top: 61px;
+            left: -35px;
+            transform: rotate(60deg);
+        }
+        .rightaside {
+            background: linear-gradient(to top left, #F0CDAD, #B9692C);
+        }
+        .bgsquare {
+            position: absolute;
+            left: 158px;
+    top: 117px;
+    z-index: 10;
+        }
+        * {
+    box-sizing: border-box;
+}
+.triangle {
+    width: 0px;
+    height: 0px;
+    border-left: 86px solid red;
+    border-right: 86px solid transparent;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+}
+.one {
+    border-left: 86px solid transparent;
+    border-right: 86px solid #D0BF82;
+    position: absolute;
+    left: -72px;
+}
+.two {
+    border-left: 86px solid #A97E64;
+    position: absolute;
+    left: 100px;
+}
+.three {
+    border-left: 86px solid #A58367;
+    transform: rotate(-60deg);
+    position: absolute;
+    left: 100px;
+}
+.four {
+    border-left: 86px solid #E5CEBC;
+    transform: rotate(0);
+    position: absolute;
+    left: 100px;
+        top: 99px;
+}
+.five {
+    border-left: 86px solid transparent;
+    border-right: 86px solid #EABF98;
+    position: absolute;
+        left: -72px;
+    top: 99px;
+}
+.six {
+    border-left: 86px solid #AFB99B;
+    position: absolute;
+    top: 50px;
+    left: 14px;
+    
+}
+#bgtri {
+    position: relative;
+    left: 100px;
+    top: 100px;
+}
+.secondhand {
+    transform: rotate(-137deg);
+    transform-origin: 0 0;
+    position: relative;
+    top: 199px;
+    left: 201px;
+    z-index: 100;
+    /*transition: all 1s cubic-bezier(0.39, 0.38, 0.62, 0.62);*/
+    transition: transform 0.2s cubic-bezier(.4,2.08,.55,.44);
+}
+.sec {
+    height: 30px;
+    width: 30px;
+    transform: skew(41deg,44deg);
+    background: black;
+    transform-origin: 0 0;
+    box-shadow: 0 0 3px rgba(0,0,0,0.8);
+}
+.minutehand {
+        position: relative;
+    top: 172px;
+    transform-origin: 2px -2px;
+    transform: rotate(-180deg);
+    left: 198.5px;
+    z-index: 10;
+}
+.min {
+    width: 4px;
+    height: 60px;
+    background: blue;
+    box-shadow: 0 0 3px rgba(0,0,0,0.8);
+}
+.little {
+    width: 0;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-top: 5px solid blue;
+    
+}
+.hourhand {
+    position: relative;
+    top: 104px;
+    left: 200.5px;
+    transform: rotate(-90deg);
+    transform-origin: 0px 0;
+    z-index: 100;
+    
+}
+.sss {
+    border-top: 1px solid darkred; 
+    width: 50px;
+    transform-origin: 0 0;
+    transform: rotate(-4deg);
+    position: relative;
+    top: -1px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.8);
+}
+.xxx {
+    border-top: 1px solid darkred; 
+    width: 50px;
+    transform-origin: 0 0;
+    transform: rotate(4deg);
+    position: relative;
+    top: -1px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.8);
+}
+.ddd {
+   height: 7px;
+    width: 7px;
+    border: 1px solid darkred;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -3.5px;
+    left: 47px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.8);
+}
+.circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 10px 4px #fff;
+    position: absolute;
+    top: 203px;
+    left: 205px;
+    z-index: 100;
+}

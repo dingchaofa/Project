@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ding</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bgsquare">
+        <div class="tri">
+            <div class="square topaside"></div>
+        </div>
+        <div class="left">
+            <div class="trileft">
+                <div class="square leftaside"></div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="triright">
+                <div class="square rightaside"></div>
+            </div>
+        </div>
+    </div>
+    <div id="bgtri">
+        <div class="triangle one"></div>
+        <div class="triangle two"></div>
+        <div class="triangle three"></div>
+        <div class="triangle four"></div>
+        <div class="triangle five"></div>
+        <div class="triangle six"></div>
+    </div>
+    <div class="hand">
+        <div class="secondhand">
+            <div class="sec"></div>
+        </div>
+        <div class="minutehand">
+            <div class="min"></div>
+            <div class="little"></div>
+        </div>
+        <div class="hourhand">
+            <div class="sss"></div>
+            <div class="xxx"></div>
+            <div class="ddd"></div>
+        </div>
+        <div class="circle"></div>
+    </div>
+
+    <script>
+        var times = setInterval(function () {
+            var time = new Date()
+            var hour = time.getHours()
+            var minute = time.getMinutes()
+            var second = time.getSeconds()
+            var hourhand = document.querySelector('.hourhand')
+            var minutehand = document.querySelector('.minutehand')
+            var secondhand = document.querySelector('.secondhand')
+            if (hour > 12) {
+                hour -= 12
+            };
+            hourhand.style.transform = 'rotate(' + (hour / 12 * 360 - 75) + 'deg)'
+            minutehand.style.transform = `rotate(${minute / 60 * 360 - 180}deg)`
+            if(second=== 59){
+                // secondhand.style.transition= 	'all 0s'
+                setTimeout(function(){
+                    secondhand.style.transform = `rotateZ(${second*6 - 137}deg)`
+                },100)
+            }
+            secondhand.style.transform = `rotateZ(${second*6 - 137}deg)`
+           //console.log(second)
+        }, 1000)
+
+    </script>
+</body>
+
+</html>
