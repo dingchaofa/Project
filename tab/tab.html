@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ding-tab</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        .tabcontain {
+            width: 500px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+        }
+        .tabnav>li {
+            /*float: left;*/
+            padding: 10px 20px;
+            border-top: 1px solid transparent;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #fff;
+            cursor: pointer;
+        }
+        .tabnav {
+            margin: 10px 20px 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .tabnav .active {
+            border: 1px solid #ccc;
+            border-bottom-color: #fff;
+            position: relative;
+            margin-bottom: -1px;
+            border-radius: 4px;
+        }
+        .tabcontent {
+            border-top: 1px solid #ccc;
+        }
+        .tabcontent li {
+            display: none;
+        }
+        .tabcontent .active {
+            display: block;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="tabcontain">
+        <ul class="tabnav">
+            <li>项目</li>
+            <li class="active">介绍</li>
+            <li>关于</li>
+        </ul>
+        <ul class="tabcontent">
+            <li class="active">项目展示</li>
+            <li>个人介绍</li>
+            <li>关于我们</li>
+        </ul>
+        </section>
+        <section class="tabcontain">
+        <ul class="tabnav">
+            <li>项目</li>
+            <li class="active">介绍</li>
+            <li>关于</li>
+        </ul>
+        <ul class="tabcontent">
+            <li class="active">项目展示</li>
+            <li>个人介绍</li>
+            <li>关于我们</li>
+        </ul>
+    </section>
+    <section class="tabcontain">
+        <ul class="tabnav">
+            <li>项目</li>
+            <li class="active">介绍</li>
+            <li>关于</li>
+            <li>更多</li>
+        </ul>
+        <ul class="tabcontent">
+            <li class="active">项目展示</li>
+            <li>个人介绍</li>
+            <li>关于我们</li>
+            <li>增加</li>
+        </ul>
+    </section>
+    <script src="tab-groupware/jquery-3.2.1.min.js"></script>
+    <script src="tab-groupware/tab-groupware.js"></script>
+    <script>
+        new Tab($('.tabcontain').eq(0))
+        new Tab($('.tabcontain').eq(1))
+        new Tab($('.tabcontain').eq(2))
+    </script>
+</body>
+</html>
