@@ -55,3 +55,7 @@ webpack 已经在命令行持续运行着，不要关掉它，打开编辑器即
   
 然后  
 >npm install --save  sass-loader node-sass
+
+2. ESLint 插件会让语法变的严格，例如哪里需要空格，哪里不需要空格，不遵循规范就会报错，我们可以去 build/webpack.base.conf.js 里，把 ESLint 给注释掉。
+
+3. 我们需要把所有svg拼接成一个整体插入到html中，svg是一种XML规范的文档，是计算机能够理解的一种数据信息符号。http://javascript.ruanyifeng.com/htmlapi/svg.html
