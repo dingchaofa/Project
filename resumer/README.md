@@ -1,27 +1,57 @@
-# resumer
-
+## resumer
 > A Vue.js project
+#### 项目目标  
+    做一个工具，用户可以用这个工具来写简历
 
-## Build Setup
+#### 功能列表
+1. 添加简历内容，包括个人信息、工作经历、学习经历、获奖情况、项目经历和联系方式。
+2. 更新简历内容
+3. 选择简历模板
+4. 预览简历
+5. 发布简历
 
-``` bash
-# install dependencies
-npm install
+#### 初始化项目
+项目使用 vue-cli 工具
 
-# serve with hot reload at localhost:8080
-npm run dev
+> mkdir resumer  
+> cd resumer  
+> npm init # 使用 npm init 来生成一个 package.json，方便我们添加依赖
 
-# build for production with minification
-npm run build
+然后全局安装 vue-cli（安装在当前目录也可以），并用 vue-cli 来初始化一个 vue 项目
 
-# build for production and view the bundle analyzer report
-npm run build --report
+> npm install -g vue-cli  
+> vue init webpack .   # 注意这里的 . 字符。 https://github.com/vuejs-templates/webpack
 
-# run unit tests
-npm run unit
+>? Vue build standalone # 注意一定要是standalone  
+>? Install vue-router? Yes  
+>? Use ESLint to lint your code? Yes  
+>? Pick an ESLint preset Standard   
+>? Setup unit tests with Karma + Mocha? Yes  
+>? Setup e2e tests with Nightwatch? No  
 
-# run all tests
-npm test
+> npm i #安装依赖  注意，init之后可能并不会退出到命令行，如果这样，就Ctrl+c  
+> npm run dev #运行完 npm run dev 你就会发现浏览器自动弹出，并访问了 http://localhost:8080/#/ 。  
+webpack 已经在命令行持续运行着，不要关掉它，打开编辑器即可编辑。
+
+#### 目录结构
+```
+.
+├── README.md
+├── build                # build 目录用于存放构建脚本，比如 webpack 配置文件
+├── config               # config 目录用于存放一些配置信息，比如配置打包后的 bundle 文件存放在哪里
+├── index.html           # 首页
+├── node_modules         # 依赖，模块
+├── package.json         # 配置文件
+├── src                  # 除了首页，其他的源代码都在 src 目录里
+├── static               # static 目录用于放置静态资源，比如 favicon.ico 文件等
+└── test                 # 单元测试等代码放在 test 目录里
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+#### 注意事项：  
+
+1. 为了让 node-sass 顺利安装，请在先在命令运行  
+>export SASS_BINARY_SITE="https://npm.taobao.org/mirrors/node-sass"
+  
+然后  
+>npm install --save  sass-loader node-sass

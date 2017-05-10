@@ -19,6 +19,8 @@ import Topbar from './components/Topbar'
 import ResumeEditor from './components/ResumeEditor'
 import ResumePreview from './components/ResumePreview'
 
+import icons from './assets/icons'
+
 export default {
   name: 'app',
   data: function() {
@@ -26,29 +28,34 @@ export default {
       text: '你好'
     }
   },
-  components:{Topbar,ResumeEditor, ResumePreview}
+  components:{Topbar,ResumeEditor, ResumePreview},
+  created(){
+    document.body.insertAdjacentHTML('afterbegin', icons)
+  }
 }
 </script>
   
-<style>
+<style lang="scss">
 
   .page {
     height: 100vh;
     display: flex;
     flex-direction: column;
-  }
-  .page>main {
-    flex-grow:1;
-  }
-  .page>main {
-    display:flex;
-    justify-content:space-between;
-    padding: 0 16px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    width:95%;
-    align-self: center;
-  }
+
+    >main {
+      flex-grow: 1;
+    }
+  
+    >main {
+      display:flex;
+      justify-content:space-between;
+      padding: 0 16px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      width:100%;
+      align-self: center;
+      }
+    }
   #resumeEditor {
     width: 30%;
     background: #333;
@@ -58,5 +65,11 @@ export default {
     flex-grow:1;
     margin-left:16px;
   }
-
+  svg.icon{
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+    vertical-align: -0.1em;
+    font-size: 16px;
+  }
 </style>
