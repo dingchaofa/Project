@@ -1,6 +1,7 @@
 ## resumer
-> A Vue.js project
+    > A Vue.js project
 #### 项目目标  
+
     做一个工具，用户可以用这个工具来写简历
 
 #### 功能列表
@@ -60,7 +61,7 @@ webpack 已经在命令行持续运行着，不要关掉它，打开编辑器即
 
 3. 我们需要把所有svg拼接成一个整体插入到html中，svg是一种XML规范的文档，是计算机能够理解的一种数据信息符号。http://javascript.ruanyifeng.com/htmlapi/svg.html
 
-4. 本项目是在两个文件内import vue，从打包后的源码来看， webpack类似对引入的构造函数进行编号，例如：__webpack__require__(0)、__webpack_require__(1)、···，只是多次调用这些打包后对应的函数，并没有重复打包。  
+4. 本项目是在两个文件内import vue，从打包后的源码来看， webpack类似对引入的构造函数进行编号，例如：`__webpack__require__(0)`、`__webpack_require__(1)`、···，只是多次调用这些打包后对应的函数，并没有重复打包。  
 
     另外，在同一文件多次引入同一个文件，会报错“Duplicate declaration "filename"”。
 
