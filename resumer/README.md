@@ -51,11 +51,17 @@ webpack 已经在命令行持续运行着，不要关掉它，打开编辑器即
 #### 注意事项：  
 
 1. 为了让 node-sass 顺利安装，请在先在命令运行  
->export SASS_BINARY_SITE="https://npm.taobao.org/mirrors/node-sass"
+    >export SASS_BINARY_SITE="https://npm.taobao.org/mirrors/node-sass"
   
-然后  
->npm install --save  sass-loader node-sass
+    然后  
+    >npm install --save  sass-loader node-sass
 
 2. ESLint 插件会让语法变的严格，例如哪里需要空格，哪里不需要空格，不遵循规范就会报错，我们可以去 build/webpack.base.conf.js 里，把 ESLint 给注释掉。
 
 3. 我们需要把所有svg拼接成一个整体插入到html中，svg是一种XML规范的文档，是计算机能够理解的一种数据信息符号。http://javascript.ruanyifeng.com/htmlapi/svg.html
+
+4. 本项目是在两个文件内import vue，从打包后的源码来看， webpack类似对引入的构造函数进行编号，例如：__webpack__require__(0)、__webpack_require__(1)、···，只是多次调用这些打包后对应的函数，并没有重复打包。  
+
+    另外，在同一文件多次引入同一个文件，会报错“Duplicate declaration "filename"”。
+
+5. input输入一大段文字，显示在对应的p标签。p标签默认样式是不换行的，但是如果用户强制换行，只会产生空格，故而修改p标签默认样式(white-space:pre-line;连续的空白符会被合并。保留换行符。)，在用户需要换行时换行。

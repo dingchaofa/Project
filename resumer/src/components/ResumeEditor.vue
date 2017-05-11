@@ -15,7 +15,7 @@
                     <div class="subitem" v-for="subitem in resume[item.field]">
                         <div class="resumeField" v-for="(value,key) in subitem">
                             <label for="">{{key}}</label>
-                            <input type="text" :value="value">
+                            <input type="text" :value=subitem[key] @input=" subitem[key]=$event.target.value">
                         </div>
                         <hr>
                     </div>
@@ -32,45 +32,22 @@
 <script>
 export default {
     name: 'ResumeEditor',
-    data(){
-        return {
-            selected: 'profile',
-            resume:{
-                config:[
-                    {field:'profile',icon:'id'},
-                    { field: 'work history', icon: 'work' },
-                    { field: 'education', icon: 'book' },
-                    { field: 'projects', icon: 'heart' },
-                    { field: 'awards', icon: 'cup' },
-                    { field: 'contacts', icon: 'phone' }
-                    ],
-                profile:{
-                    name: '',
-                    city: '',
-                    title: ''
-                },
-                'work history': [
-            {company: 'AL', content: '我的第二份工作是'},
-            {company: 'TX', content: '我的第一份工作是'},
-          ],
-                education: [
-             { school: 'AL', content: '文字' },
-             { school: 'TX', content: '文字' },
-           ],
-                projects: [
-             { name: 'project A', content: '文字' },
-             { name: 'project B', content: '文字' },
-           ],
-                awards: [
-             { name: 'awards A', content: '文字' },
-             { name: 'awards B', content: '文字' },
-           ],
-                contacts: [
-             { contact: 'phone', content: '13812345678' },
-             { contact: 'qq', content: '12345678' },
-           ]
+    
+    computed: {
+        selected: {
+            get(){
+                return this.$store.state.selected
+            },
+            set(value){
+                return this.$store.commit('switchTab',value)
             }
+        },
+        resume(){
+            return this.$store.state.resume
         }
+    },
+    methods: {
+        
     }
 }
 </script>
@@ -82,6 +59,7 @@ export default {
         display: flex;
         flex-dirction: row;
         overflow: auto;
+        min-width: 34%;
         > nav {
             width:80px;
             background:black;
