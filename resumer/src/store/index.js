@@ -1,11 +1,16 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
 
+import objectPath from 'object-path'
     Vue.use(Vuex)
 
     export default new Vuex.Store({
         state: {
         selected: 'profile',
+        user: {
+            id: 'qwq',
+            username: ''
+        },
         resume:{
             config:[
                 {field:'profile',icon:'id'},
@@ -46,6 +51,31 @@ import Vue from 'vue'
     mutations: {
         switchTab(state,payload){
             state.selected = payload
+            localStorage.setItem('state',JSON.stringify(state))
+        },
+        updateResume(state,{path,value}){
+            objectPath.set(state.resume,path,value)
+            localStorage.setItem('state',JSON.stringify(state))
+        },
+        initState(state,payload){
+            Object.assign(state,payload) 
+            //ResumeEditor.vue中的resume()是从index.js中的state中读取的，
+            //这个和保存在localStorage中的state是不一样的，而我们要获得localStorage的state中的内容。
+            //通过Object.assign()方法，浅拷贝
+        },
+        setUser(state,payload){
+            //console.log(payload,111)
+            Object.assign(state.user,payload)
+            //console.log(state.user,222)
+        },
+        removeUser(state){
+            state.user.id = null
+            // state.user.username = payload
+            Object.assign(state.user,{
+                'state.user.id': '',
+                'state.user.username':''
+            })
+            localStorage.setItem('state',JSON.stringify(state))
         }
     }
     })

@@ -79,8 +79,8 @@
             }
         },
         created(){
-            console.log(this.$store.state.resume)
-            console.log(this.$store.state.selected,111)
+            //console.log(this.$store.state.resume)
+            //console.log(this.$store.state.selected,111)
         }
     }
 </script>
