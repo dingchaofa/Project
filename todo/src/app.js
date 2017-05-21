@@ -127,6 +127,4 @@ var app = new Vue({
       this.currentUser = this.getCurrentUser() //检查用户是否登录
       this.fetchTodos()
   }
-  
-
 }) 

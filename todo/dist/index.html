@@ -4,17 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>REASUME</title>
+  <title>Todo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="app" v-cloak>
-    <div class="wrap">
-      <div class="child">
-    <section id="signInAndSignUp" class="img" v-if="!currentUser">
+    <section id="signInAndSignUp" v-if="!currentUser">
+      <div class="wrap">
       <div>
-        <label class="active" for="signUp"><input type="radio" name="type" v-model="actionType" value="signUp" id="signUp">注册</label>
-        <label for="login"><input type="radio" name="type" v-model="actionType" value="login" id="login">登录</label>
+        <label class="active" for="signUp">
+          <input type="radio" name="type" v-model="actionType" value="signUp" id="signUp">
+          注册</label>
+        <label for="login">
+          <input type="radio" name="type" v-model="actionType" value="login" id="login">
+          登录</label>
       </div>
       <div class="signUp" v-if="actionType==='signUp'">
          <form @submit.prevent=signUp>
@@ -42,9 +45,8 @@
           </div>
         </form>
       </div>
+      </div>
     </section>
-    </div>
-    </div>
     <section id="todo" v-if="currentUser">
       <p><button @click="logout">退出</button></p>
       <div class="newTask">
