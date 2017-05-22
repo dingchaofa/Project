@@ -66,3 +66,6 @@ webpack 已经在命令行持续运行着，不要关掉它，打开编辑器即
     另外，在同一文件多次引入同一个文件，会报错“Duplicate declaration "filename"”。
 
 5. input输入一大段文字，显示在对应的p标签。p标签默认样式是不换行的，但是如果用户强制换行，只会产生空格，故而修改p标签默认样式(white-space:pre-line;连续的空白符会被合并。保留换行符。)，在用户需要换行时换行。
+
+
+本设计模式参考 http://registry.jsonresume.org/
