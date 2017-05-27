@@ -1,0 +1,253 @@
+@function rem($pixels){
+         @return $pixels / 400 + rem;
+     }
+/* lazyload css */
+.loadmore {
+    visibility: hidden;
+    margin: rem(3);
+    padding: rem(3);
+}
+/* waterfall */
+body {
+    font-family: STHeiti,'Microsoft YaHei',Helvetica,Arial,sans-serif;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul,
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #222;
+    -webkit-tap-highlight-color: transparent;
+}
+.wrap {
+    /*width: 900px;*/
+        margin-top: rem(88);
+}
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+#pic-ct .item {
+    background: #FFF;
+    border-bottom: 1px solid #DBDBDB;
+    padding: rem(4);
+    margin: rem(3);
+}
+#pic-ct .item img {
+    float: left;
+    width: rem(124);
+    margin-right: rem(12);
+    height: rem(90);
+}
+#pic-ct .item .header {
+    height: rem(25);
+    margin: 0 rem(12);
+    letter-spacing: rem(1);
+    font-size: rem(16);
+    font-weight: 400;
+}
+#pic-ct .desp {
+    font-size: rem(14);
+    line-height: 1.5;
+    margin: rem(10) 0 0 rem(134);
+    color: #777371;
+    height: rem(44);
+    overflow: hidden;
+}
+#load {
+    visibility: hidden;
+    height: rem(20);
+}
+.hide {
+    display: none;
+}
+/* header */
+.head .headTop {
+    background-color: #D43D3D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 rem(10);
+    color: white;
+    line-height: rem(44);
+}
+.head .letter {
+    background: url('image/letter.png') no-repeat;
+    background-size: contain;
+    width: rem(32);
+    height: rem(25);
+}
+.head .refresh {
+    display: flex;
+}
+.head .refresh h3{
+    font-size: rem(18);
+}
+.head .refresh span{
+    background: url(image/refresh.png) no-repeat;
+    width: rem(25);
+    background-size: rem(15);
+    background-position: center;
+}
+.head .headTop .search>a{
+    background: url('image/search.png');
+    display: block;
+    width: rem(24);
+    height: rem(24);
+    background-size: contain;
+}
+.navbar {
+    background-color: #f4f5f6;
+}
+header.head {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.navbar .allBar ul {
+    display: flex;
+    justify-content: space-around;
+    background-color: #F4F5F6;
+    line-height: rem(40);
+    position: relative;
+    transform: translateX(- rem(40));
+}
+.navbar .allBar li>a {
+    color: #505050;
+    font-size: rem(17);
+    line-height: rem(26);
+    padding-left: rem(10);
+    padding-right: rem(10);
+    margin-left: rem(5);
+    margin-top: rem(5);
+    margin-bottom: rem(5);
+    -webkit-tap-highlight-color: rgba(0,0,0,.3);
+    white-space: nowrap;
+    display: inline-block;
+}
+.removeScroll {
+    overflow: hidden;
+    height: rem(38);
+    /*position: absolute;*/
+}
+.allBar {
+    overflow-x: scroll;
+    white-space: nowrap;
+    height: rem(60);
+    position: relative;
+    transform: translateX(-rem(40));
+}
+.navbar .addBar {
+    position: absolute;
+    right: 0;
+    line-height: rem(38);
+    background-color: #f4f5f6;
+    z-index: 111;
+}
+.navbar .addBar>a{
+    background: url(image/addChannels.png) no-repeat 50%;
+    display: block;
+    width: rem(40);
+    height: rem(38);
+    background-size: rem(20);
+}
+.tipLoad {
+    display: none;
+    text-align: center;
+}
+.tipLoad+span {
+    text-align: center;
+    position: fixed;
+    background-color: rgba(193, 184, 184, 0.8);
+    width: 100%;
+    line-height: rem(30);
+    top: rem(80);
+    display: none;
+}
+.refresh .rotate {
+animation: xyRotate .7s linear;
+}
+@keyframes xyRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+         }
+    100% {
+     transform: rotate(1turn);
+    }
+}
+/* popup modul */
+.modul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,.5);
+    display: none;
+}
+.modul .popup {
+    width: rem(270);
+    height: rem(225);
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -rem(113);
+    margin-left: -rem(135);
+    border-radius: rem(4);
+}
+.modul .banner {
+    margin-top: rem(10);
+    margin-left: rem(54);
+    width: rem(165);
+    height: rem(121);
+    background: url('image/modul.png') no-repeat;
+    background-size: contain;
+}
+.modul .closePopup {
+    width: rem(40);
+    height: rem(32);
+    background: url('image/cancel.png') no-repeat 50%;
+    background-size: rem(17);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.modul p {
+    text-align: center;
+    color: #a5a5a5;
+    font-size: rem(17);
+    margin-top: rem(6);
+    margin-bottom: rem(24);
+}
+.modul .openNow {
+    margin-left: rem(25);
+    width: rem(220);
+    background: #ff6762;
+    text-align: center;
+    line-height: rem(40);
+    margin-top: rem(5);
+    margin-bottom: rem(15);
+    border-radius: rem(10);
+    text-shadow: 0 1px 1px #f0221c;
+    color: #fff;
+    font-size: rem(20);
+}
+/* 增加一个点击频道，这个频道居中 */
+.navbar .allBar .cur>a {
+    color: #f85959;
+}

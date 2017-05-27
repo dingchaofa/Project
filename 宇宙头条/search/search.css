@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none;
+  color: #333;
+  -webkit-tap-highlight-color: transparent; }
+
+#header {
+  position: relative; }
+
+.topBar > a {
+  display: inline-block;
+  height: 0.11rem;
+  top: 0;
+  left: 0;
+  width: 0.11rem;
+  border-radius: 0;
+  background: url(../image/header_back.png) no-repeat center center;
+  background-size: 0.05rem; }
+
+.topBar {
+  height: 0.11rem;
+  background: #d43d3d; }
+
+/* search input */
+.searchText {
+  font-size: 0.05rem;
+  color: #fff;
+  font-weight: 700;
+  line-height: 0.11rem;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%); }
+
+form {
+  background: #c9c9c9;
+  position: relative; }
+
+.searchContent {
+  padding: 0.0125rem;
+  position: relative; }
+
+.searchContent > a {
+  display: block;
+  width: 0.1rem;
+  height: 0.0675rem;
+  position: absolute;
+  background: url(../image/search_icons.png) #fff no-repeat 0.0125rem 0.005rem;
+  background-size: 0.05rem;
+  /*background-position: 5) -35);*/
+  left: 0.0125rem; }
+
+.searchContent .triangle {
+  position: absolute;
+  top: 0.045rem;
+  left: 0.0825rem;
+  border-right: transparent 0.0075rem solid;
+  border-left: transparent 0.0075rem solid;
+  border-top: #c9c9c9 0.0075rem solid;
+  width: 0;
+  height: 0; }
+
+.searchContent input[type=search] {
+  border: 0;
+  border-radius: 0.0075rem;
+  margin: 0;
+  width: 100%;
+  font-size: 0.04rem;
+  padding: 0.0125rem 0.025rem 0.0125rem 0.1rem;
+  color: #666;
+  background: #fff;
+  display: inherit; }
+
+ul.toutiao {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+
+.hotWords .toutiao li {
+  display: inline-block;
+  margin: 0.0375rem 0.0125rem 0; }
+
+.hotWords .toutiao li a {
+  display: block;
+  background: #f5f5f5;
+  color: #363636;
+  font-size: 0.0375rem;
+  padding: 0.0125rem; }

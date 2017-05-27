@@ -1,0 +1,248 @@
+@charset "UTF-8";
+/* lazyload css */
+.loadmore {
+  visibility: hidden;
+  margin: 0.0075rem;
+  padding: 0.0075rem; }
+
+/* waterfall */
+body {
+  font-family: STHeiti,'Microsoft YaHei',Helvetica,Arial,sans-serif; }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+ul,
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: #222;
+  -webkit-tap-highlight-color: transparent; }
+
+.wrap {
+  font-size: 0.04rem;
+  margin-top: 0.22rem; }
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+#pic-ct .item {
+  background: #FFF;
+  border-bottom: 1px solid #DBDBDB;
+  padding: 0.01rem;
+  margin: 0.0075rem; }
+
+#pic-ct .item img {
+  float: left;
+  width: 0.31rem;
+  margin-right: 0.03rem;
+  height: 0.225rem; }
+
+#pic-ct .item .header {
+  height: 0.0625rem;
+  margin: 0 0.03rem;
+  letter-spacing: 0.0025rem;
+  font-size: 0.04rem;
+  font-weight: 400; }
+
+#pic-ct .desp {
+  font-size: 0.035rem;
+  line-height: 1.5;
+  margin: 0.025rem 0 0 0.335rem;
+  color: #777371;
+  height: 0.11rem;
+  overflow: hidden; }
+
+#load {
+  visibility: hidden;
+  height: 0.05rem; }
+
+.hide {
+  display: none; }
+
+/* header */
+.head .headTop {
+  background-color: #D43D3D;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.025rem;
+  color: white;
+  line-height: 0.11rem; }
+
+.head .letter {
+  background: url("image/letter.png") no-repeat;
+  background-size: contain;
+  width: 0.08rem;
+  height: 0.0625rem; }
+
+.head .refresh {
+  display: flex; }
+
+.head .refresh h3 {
+  font-size: 0.045rem; }
+
+.head .refresh span {
+  background: url(image/refresh.png) no-repeat;
+  width: 0.0625rem;
+  background-size: 0.0375rem;
+  background-position: center; }
+
+.head .headTop .search > a {
+  background: url("image/search.png");
+  width: 0.06rem;
+  height: 0.06rem;
+  background-size: contain;
+  display: block;
+  user-select: none; }
+
+.navbar {
+  background-color: #f4f5f6; }
+
+header.head {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0; }
+
+.navbar .allBar ul {
+  display: flex;
+  justify-content: space-around;
+  background-color: #F4F5F6;
+  line-height: 0.1rem;
+  position: relative;
+  transform: translateX(0.1rem); }
+
+.navbar .allBar li > a {
+  color: #505050;
+  font-size: 0.0425rem;
+  line-height: 0.065rem;
+  padding-left: 0.025rem;
+  padding-right: 0.025rem;
+  margin-left: 0.0125rem;
+  margin-top: 0.0125rem;
+  margin-bottom: 0.0125rem;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  display: block; }
+
+.removeScroll {
+  overflow: hidden;
+  height: 0.095rem;
+  /*position: absolute;*/ }
+
+.allBar {
+  overflow-x: scroll;
+  white-space: nowrap;
+  height: 0.15rem;
+  position: relative;
+  transform: translateX(-0.1rem); }
+
+.navbar .addBar {
+  position: absolute;
+  right: 0;
+  line-height: 0.095rem;
+  background-color: #f4f5f6;
+  z-index: 111; }
+
+.navbar .addBar > a {
+  background: url(image/addChannels.png) no-repeat 50%;
+  display: block;
+  width: 0.1rem;
+  height: 0.095rem;
+  background-size: 0.05rem; }
+
+.tipLoad {
+  display: none;
+  text-align: center; }
+
+.tipLoad + span {
+  text-align: center;
+  position: fixed;
+  background-color: rgba(193, 184, 184, 0.8);
+  width: 100%;
+  line-height: 0.075rem;
+  top: 0.2rem;
+  display: none; }
+
+.refresh .rotate {
+  animation: xyRotate .7s linear; }
+
+@keyframes xyRotate {
+  0% {
+    transform: rotate(0deg); }
+  50% {
+    transform: rotate(180deg); }
+  100% {
+    transform: rotate(1turn); } }
+
+/* popup modul */
+.modul {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  display: none; }
+
+.modul .popup {
+  width: 0.675rem;
+  height: 0.5625rem;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -0.2825rem;
+  margin-left: -0.2825rem;
+  border-radius: 0.01rem; }
+
+.modul .banner {
+  margin-top: 0.025rem;
+  margin-left: 0.135rem;
+  width: 0.4125rem;
+  height: 0.3025rem;
+  background: url("image/modul.png") no-repeat;
+  background-size: contain; }
+
+.modul .closePopup {
+  width: 0.1rem;
+  height: 0.08rem;
+  background: url("image/cancel.png") no-repeat 50%;
+  background-size: 0.0425rem;
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.modul p {
+  text-align: center;
+  color: #a5a5a5;
+  font-size: 0.0425rem;
+  margin-top: 0.015rem;
+  margin-bottom: 0.06rem; }
+
+.modul .openNow {
+  margin-left: 0.0625rem;
+  width: 0.55rem;
+  background: #ff6762;
+  text-align: center;
+  line-height: 0.1rem;
+  margin-top: 0.0125rem;
+  margin-bottom: 0.0375rem;
+  border-radius: 0.025rem;
+  text-shadow: 0 1px 1px #f0221c;
+  color: #fff;
+  font-size: 0.05rem; }
+
+/* 增加一个点击频道，这个频道居中 */
+.navbar .allBar .cur > a {
+  color: #f85959; }
