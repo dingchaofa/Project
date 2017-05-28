@@ -202,8 +202,7 @@ header.head {
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-top: -0.2825rem;
-  margin-left: -0.2825rem;
+  transform: translate(-50%,-50%);
   border-radius: 0.01rem; }
 
 .modul .banner {
