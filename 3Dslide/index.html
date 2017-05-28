@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3Dslide</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .stage_area {
+            width: 900px;
+            min-height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 100px 50px;
+            background-color: #f0f0f0;
+            box-shadow: inset 0 0 3px rgba(0, 0, 0, .35);
+            perspective: 800px;
+            position: relative;
+            top: 0;
+        }
+
+        .container {
+            width: 128px;
+            height: 100px;
+            margin-left: -64px;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+            position: absolute;
+            left: 50%;
+        }
+
+        .piece {
+            width: 128px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+            transition: opacity 1s, transform 1s;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .remind {
+            position: absolute;
+            left: 1em;
+            top: 1em;
+        }
+
+        .chrome_fix {
+            position: absolute;
+            left: 1em;
+            top: 3em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <h1>3D画廊</h1>
+        <div id="stage" class="stage_area" style="top: 0px;">
+            <strong class="remind">点击任意图片浏览：</strong>
+            <div id="container" class="container" style="transform: rotateY(-200deg);">
+                <template>
+                    <img id="piece1" src="image/12.jpg" class="piece" style="transform: rotateY(0deg) translateZ(195.839px);">
+                    <img id="piece2" src="image/01.jpg" class="piece" style="transform: rotateY(30deg) translateZ(195.839px);">
+                    <img id="piece3" src="image/02.jpg" class="piece" style="transform: rotateY(60deg) translateZ(195.839px);">
+                    <img id="piece4" src="image/03.jpg" class="piece" style="transform: rotateY(90deg) translateZ(195.839px);">
+                </template>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            // CSS transform变换应用
+            var transform = function (element, value, key) {
+                key = key || "Transform";
+                ["Moz", "O", "Ms", "Webkit", ""].forEach(function (prefix) {
+                    element.style[prefix + key] = value;
+                });
+                return element;
+            },
+                // 浏览器选择器API
+                $ = function (selector) {
+                    return document.querySelector(selector);
+                },
+                $$ = function (selector) {
+                    return document.querySelectorAll(selector);
+                }
+            // 显示图片，这里的图片名必须是数字
+            let htmlPic = ``,
+                arrayPic = ['01', '02', '03', '04', '05', '06', '08', '09', '10', '11'],
+                rotate = 360 / arrayPic.length
+
+            arrayPic.forEach(function (i) {
+                htmlPic = htmlPic + `<img id="piece${i}" src="image/${i}.jpg" class="piece">`;
+            });
+
+            // 父容器
+            let eleContainer = $("#container"),
+                indexPiece = 0
+            // 子元素
+            let elePics = $$(".piece"),
+                translateZ = 64 / Math.tan((rotate / 2 / 180) * Math.PI) //透视的距离，为了让图片刚好围中心位置，排满一圈
+
+            eleContainer.innerHTML = htmlPic
+            eleContainer.addEventListener("click", function () {
+                transform(this, `rotateY(${-1 * rotate * ++indexPiece}deg)`)
+            })
+
+            arrayPic.forEach(function (i, j){
+                transform($("#piece" + i), `rotateY(${j * rotate}deg) translateZ(${translateZ + 20}px)`)
+            })
+        })()
+    </script>
+</body>
+
+</html>
