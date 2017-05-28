@@ -7,8 +7,8 @@
             css = `html {
                 font-size: ${width}px;
             }`
-            console.log(css)
-            console.log(width)
+            // console.log(css)
+            // console.log(width)
         document.write(`<style>${css}</style>`)
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -131,7 +131,7 @@
                 allLi.off('touchend', moveCenter)
             })
         })
-        allLi.on('touchmove', moveCenter)
+        // allLi.on('touchmove', moveCenter)
         function moveCenter(e) {
             let index = allLi.index($(this)) - 3,
                 liWidth = $(this).width()
