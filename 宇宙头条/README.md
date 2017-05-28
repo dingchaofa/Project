@@ -2,7 +2,7 @@
 
 #### 手机端扫描二维码预览  
 ![](http://ww1.sinaimg.cn/large/c5ac7b48gy1fg0znhv27jj208c0auaa2.jpg)
-
+<img src="http://ww1.sinaimg.cn/large/c5ac7b48gy1fg0znhv27jj208c0auaa2.jpg">
 1. web单页应用
 2. 设计模式：发布者订阅模式
 ## 思考：
