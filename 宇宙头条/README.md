@@ -1,8 +1,8 @@
 ## 手机端新闻站
 
 #### 手机端扫描二维码预览  
-![](http://ww1.sinaimg.cn/large/c5ac7b48gy1fg0znhv27jj208c0auaa2.jpg)
-<img src="http://ww1.sinaimg.cn/large/c5ac7b48gy1fg0znhv27jj208c0auaa2.jpg">
+![宇宙头条.png](https://ooo.0o0.ooo/2017/05/28/592a9f71a9eec.png)
+
 1. web单页应用
 2. 设计模式：发布者订阅模式
 ## 思考：
