@@ -53,8 +53,8 @@ a {
 
 #pic-ct .desp {
   font-size: 0.035rem;
-  line-height: 1.5;
-  margin: 0.025rem 0 0 0.335rem;
+  line-height: 1.6em;
+  margin: 0.025rem 0 0.025rem;
   color: #777371;
   height: 0.11rem;
   overflow: hidden; }
