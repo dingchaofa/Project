@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,43 +7,32 @@
     <title>3Dslide</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .stage_area {
-            width: 900px;
-            min-height: 100px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 100px 50px;
-            perspective: 10000px;
-            position: relative;
-            top: 0;
-        }
-        .container {
-            width: 300px;
-            height: 100px;
-            transition: transform 1s;
-            transform-style: preserve-3d;
-            margin: 0 auto;
-        }
-        .piece {
-            width: 300px;
-            position: absolute;
-            bottom: 0;
-            border-radius: 5px;
-    box-shadow: 0 1px 6px -8px;
-    -webkit-box-reflect: below 0px -webkit-linear-gradient(top, transparent, transparent 90%, rgba(255,255,255,0.8));
-        }
-
-        .remind {
-            position: absolute;
-            left: 1em;
-            top: 1em;
-        }
-
-        .chrome_fix {
-            position: absolute;
-            left: 1em;
-            top: 3em;
-        }
+    .stage_area {
+        width: 900px;
+        min-height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 100px 50px;
+        perspective: 10000px;
+        position: relative;
+        top: 0;
+    }
+    .container {
+        width: 300px;
+        height: 100px;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+        margin: 0 auto;
+    }
+    .piece {
+        width: 297px;
+        position: absolute;
+        bottom: 0;
+        border-radius: 5px;
+        box-shadow: 0 1px 6px -8px;
+        -webkit-box-reflect: below 0px -webkit-linear-gradient(top, transparent, transparent 90%, rgba(255,255,255,0.8));
+        box-reflect: below 0px linear-gradient(top, transparent, transparent 90%, rgba(255,255,255,0.8));
+    }
     </style>
 </head>
 
@@ -52,7 +40,6 @@
     <div id="main">
         <h1>3D画廊</h1>
         <div id="stage" class="stage_area" style="top: 0px;">
-            <strong class="remind">点击任意图片浏览：</strong>
             <div id="container" class="container" style="transform: rotateY(-200deg);">
                 <template>
                     <img id="piece1" src="image/12.jpg" class="piece" style="transform: rotateY(0deg) translateZ(195.839px);">
@@ -88,7 +75,6 @@
             arrayPic.forEach(function (i) {
                 htmlPic = htmlPic + `<img id="piece${i}" src="image/${i}.jpg" class="piece">`;
             });
-            
             // 父容器
             let eleContainer = $("#container"),
                 indexPiece = 0
@@ -102,8 +88,8 @@
                 transform(this, `rotateY(${-1 * rotate * ++indexPiece}deg)`)
             })
 
-            arrayPic.forEach(function (i, j){
-                transform($("#piece" + i), `rotateY(${j * rotate}deg) translateZ(${translateZ + 30}px)`)
+            arrayPic.forEach(function (ele, index){
+                transform($("#piece" + ele), `rotateY(${index*rotate}deg) translateZ(${translateZ + 30}px)`)
             })
         })()
     </script>
