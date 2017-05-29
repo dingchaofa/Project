@@ -1,43 +1,48 @@
+div#main {
+    position: relative;
+}
 .square {
-            height: 100px;
-            width: 100px;      
-            transform: rotate(45deg);
-            background: linear-gradient(to bottom right, #F0CDAD, #afb155);
-        }
-        .tri {
-            transform: scaleY(0.58);           
-        }
-        .leftaside {
-            background: linear-gradient(to bottom right, #F0CDAD, #8D5F48);
-        }
-        .trileft{
-            transform: scaleY(0.58);
-        }
-        .left {
-            position: absolute;
-            left: 35px;
-            top: 61px;
-            transform: rotate(120deg);
-        }
-        .triright {
-            transform: scaleY(0.58);
-        }
-        .right {
-            position: absolute;
-            top: 61px;
-            left: -35px;
-            transform: rotate(60deg);
-        }
-        .rightaside {
-            background: linear-gradient(to top left, #F0CDAD, #B9692C);
-        }
-        .bgsquare {
-            position: absolute;
-            left: 158px;
-    top: 117px;
+    height: 100px;
+    width: 100px;      
+    transform: rotate(45deg);
+    background: linear-gradient(to bottom right, #F0CDAD, #afb155);
+}
+.tri {
+    transform: scaleY(0.58);           
+}
+.leftaside {
+    background: linear-gradient(to bottom right, #F0CDAD, #8D5F48);
+}
+.trileft{
+    transform: scaleY(0.58);
+}
+.left {
+    position: absolute;
+    left: 35px;
+    top: 61px;
+    transform: rotate(120deg);
+}
+.triright {
+    transform: scaleY(0.58);
+}
+.right {
+    position: absolute;
+    top: 61px;
+    left: -35px;
+    transform: rotate(60deg);
+}
+.rightaside {
+    background: linear-gradient(to top left, #F0CDAD, #B9692C);
+}
+.bgsquare {
+    position: absolute;
+    left: 150px;
+    top: 109px;
     z-index: 10;
-        }
-        * {
+}
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 .triangle {
@@ -82,7 +87,7 @@
 .six {
     border-left: 86px solid #AFB99B;
     position: absolute;
-    top: 50px;
+    top: 49px;
     left: 14px;
     
 }
@@ -104,77 +109,52 @@
 .sec {
     height: 30px;
     width: 30px;
-    transform: skew(41deg,44deg);
-    background: black;
+    transform: skew(40deg,44deg);
+    background: #e5cebc;
     transform-origin: 0 0;
-    box-shadow: 0 0 3px rgba(0,0,0,0.8);
+    box-shadow: 0 0 3px rgb(175, 185, 155);
+}
+.min {
+    height: 27px;
+    width: 27px;
+    transform: skew(40deg,44deg);
+    background: #ebc3a0;
+    transform-origin: 0 0;
+    box-shadow: 0 0 3px rgb(193, 189, 186);
+}
+.hou {
+    height: 24px;
+    width: 24px;
+    transform: skew(40deg,42deg);
+    background:  #ebc3a0;
+    transform-origin: 0 0;
+    box-shadow: 0 0 3px rgba(193, 182, 182, 0.8);
 }
 .minutehand {
-        position: relative;
-    top: 172px;
-    transform-origin: 2px -2px;
-    transform: rotate(-180deg);
+    position: relative;
+    top: 166px;
+    transform-origin: 3px 3px;
+    transform: rotate(-138deg);
     left: 198.5px;
     z-index: 10;
 }
-.min {
-    width: 4px;
-    height: 60px;
-    background: blue;
-    box-shadow: 0 0 3px rgba(0,0,0,0.8);
-}
-.little {
-    width: 0;
-    border-left: 2px solid transparent;
-    border-right: 2px solid transparent;
-    border-top: 5px solid blue;
-    
-}
 .hourhand {
     position: relative;
-    top: 104px;
-    left: 200.5px;
-    transform: rotate(-90deg);
-    transform-origin: 0px 0;
+    top: 137px;
+    left: 196px;
+    transform: rotate(-136deg);
+    transform-origin: 5px 5px;
     z-index: 100;
     
-}
-.sss {
-    border-top: 1px solid darkred; 
-    width: 50px;
-    transform-origin: 0 0;
-    transform: rotate(-4deg);
-    position: relative;
-    top: -1px;
-    box-shadow: 0 0 3px rgba(0,0,0,0.8);
-}
-.xxx {
-    border-top: 1px solid darkred; 
-    width: 50px;
-    transform-origin: 0 0;
-    transform: rotate(4deg);
-    position: relative;
-    top: -1px;
-    box-shadow: 0 0 3px rgba(0,0,0,0.8);
-}
-.ddd {
-   height: 7px;
-    width: 7px;
-    border: 1px solid darkred;
-    transform: rotate(45deg);
-    position: absolute;
-    top: -3.5px;
-    left: 47px;
-    box-shadow: 0 0 3px rgba(0,0,0,0.8);
 }
 .circle {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #fff;
-    box-shadow: 0 0 10px 4px #fff;
+    background: #a58367;
+    box-shadow: 0 0 10px 4px #d79f72;
     position: absolute;
-    top: 203px;
-    left: 205px;
+    top: 196px;
+    left: 197px;
     z-index: 100;
 }

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +7,8 @@
     <title>Ding-clock</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <div id="main">
     <div class="bgsquare">
         <div class="tri">
             <div class="square topaside"></div>
@@ -39,16 +38,13 @@
         </div>
         <div class="minutehand">
             <div class="min"></div>
-            <div class="little"></div>
         </div>
         <div class="hourhand">
-            <div class="sss"></div>
-            <div class="xxx"></div>
-            <div class="ddd"></div>
+            <div class="hou"></div>
         </div>
         <div class="circle"></div>
     </div>
-
+</div>
     <script>
         var times = setInterval(function () {
             var time = new Date()
