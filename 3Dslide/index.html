@@ -14,29 +14,24 @@
             margin-left: auto;
             margin-right: auto;
             padding: 100px 50px;
-            background-color: #f0f0f0;
-            box-shadow: inset 0 0 3px rgba(0, 0, 0, .35);
-            perspective: 800px;
+            perspective: 10000px;
             position: relative;
             top: 0;
         }
-
         .container {
-            width: 128px;
+            width: 300px;
             height: 100px;
-            margin-left: -64px;
             transition: transform 1s;
             transform-style: preserve-3d;
-            position: absolute;
-            left: 50%;
+            margin: 0 auto;
         }
-
         .piece {
-            width: 128px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, .5);
-            transition: opacity 1s, transform 1s;
+            width: 300px;
             position: absolute;
             bottom: 0;
+            border-radius: 5px;
+    box-shadow: 0 1px 6px -8px;
+    -webkit-box-reflect: below 0px -webkit-linear-gradient(top, transparent, transparent 90%, rgba(255,255,255,0.8));
         }
 
         .remind {
@@ -93,21 +88,22 @@
             arrayPic.forEach(function (i) {
                 htmlPic = htmlPic + `<img id="piece${i}" src="image/${i}.jpg" class="piece">`;
             });
-
+            
             // 父容器
             let eleContainer = $("#container"),
                 indexPiece = 0
+            eleContainer.innerHTML = htmlPic
             // 子元素
             let elePics = $$(".piece"),
-                translateZ = 64 / Math.tan((rotate / 2 / 180) * Math.PI) //透视的距离，为了让图片刚好围中心位置，排满一圈
-
-            eleContainer.innerHTML = htmlPic
+                eleWidth = elePics[0].getBoundingClientRect().width,
+                translateZ = 150 / Math.tan((rotate / 2 / 180) * Math.PI) //透视的距离，为了让图片刚好围中心位置，排满一圈
+                console.log(eleWidth)
             eleContainer.addEventListener("click", function () {
                 transform(this, `rotateY(${-1 * rotate * ++indexPiece}deg)`)
             })
 
             arrayPic.forEach(function (i, j){
-                transform($("#piece" + i), `rotateY(${j * rotate}deg) translateZ(${translateZ + 20}px)`)
+                transform($("#piece" + i), `rotateY(${j * rotate}deg) translateZ(${translateZ + 30}px)`)
             })
         })()
     </script>
