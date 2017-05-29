@@ -98,8 +98,8 @@
                 if (hour > 12) {
                     hour -= 12
                 };
-                hourhand.style.transform = 'rotate(' + (hour / 12 * 360 + 230) + 'deg)'
-                minutehand.style.transform = `rotate(${minute / 60 * 360 + 219}deg)`
+                hourhand.style.transform = 'rotate(' + (hour / 12 * 360 + 235) + 'deg)'
+                minutehand.style.transform = `rotate(${minute / 60 * 360 + 221}deg)`
                 if (second === 59) {
                     secondhand.style.transition = 'all 0s' //移除59秒时的过渡效果
                     setTimeout(function () {
