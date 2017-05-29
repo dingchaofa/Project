@@ -1,5 +1,11 @@
 div#main {
+    display: flex;
+}
+div#clock {
     position: relative;
+    width: 100vw;
+    overflow: hidden;
+    max-width: 300px;
 }
 .square {
     height: 100px;
@@ -157,4 +163,24 @@ div#main {
     top: 196px;
     left: 197px;
     z-index: 100;
+}
+div#draw {
+    /* align-self: flex-start; */
+    margin: 20px;
+    padding: 54px 0px;
+    flex-grow: 1;
+    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+}
+#draw .proety>div {
+    position: relative;
+    width:1.5em;
+    float:right;
+    font-size: 18px;
+}
+.beauty img {
+    float: right;
+}
+.beauty .birds {
+    position: absolute;
+    right: 50%;
 }
