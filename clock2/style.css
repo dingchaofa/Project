@@ -4,7 +4,7 @@ div#main {
 div#clock {
     position: relative;
     width: 100vw;
-    overflow: hidden;
+
     max-width: 300px;
 }
 .square {
@@ -183,4 +183,17 @@ div#draw {
 .beauty .birds {
     position: absolute;
     right: 50%;
+}
+@media (max-width:440px){
+    div#draw {
+        display: none;
+    }
+    .beauty {
+        display: none;
+    }
+    body {
+    width: 100vw;
+    height: 100vh;
+    background-color: aliceblue;
+}
 }
