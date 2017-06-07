@@ -1,0 +1,45 @@
+<!doctype html>
+<head>
+  <style>
+    /* Prevents slides from flashing */
+    #slides {
+      display:none;
+    }
+  </style>
+
+  <script src="http://apps.bdimg.com/libs/jqueryf/2.1.4/jquery.min.js"></script>
+  
+  <script>
+      window.jquery || document.write('<script src="jquery.min.js"><\/script>')
+  </script>
+  <script src="http://apps.bdimg.com/libs/slidesjsf/3.0/jquery.slides.min.js"></script>
+  <!--<script>
+      window.jquery.slidesjs || document.write('<script src="jquery.slides.min.js"><\/script>')
+  </script>-->
+  <script>
+    $(function(){
+        if(!$("#slides").slidesjs){
+            var $slide = $('<script src="jquery.slides.min.js"><\/script>')
+            $('head script:last').before($slide)
+                $("#slides").slidesjs({
+                    width: 940,
+                    height: 528
+            })
+        }else{
+            $("#slides").slidesjs({
+                    width: 940,
+                    height: 528
+            })
+        }
+    });
+  </script>
+</head>
+<body>
+  <div id="slides">
+    <img src="http://placehold.it/940x528">
+    <img src="http://placehold.it/940x528">
+    <img src="http://placehold.it/940x528">
+    <img src="http://placehold.it/940x528">
+    <img src="http://placehold.it/940x528">
+  </div>
+</body>
