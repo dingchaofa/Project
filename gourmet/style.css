@@ -73,8 +73,7 @@ li.slidesjs-pagination-item > a.active {
   font-size: 0.04831rem; }
 
 .sail span:first-child {
-  color: #ff3939;
-  font-weight: 700; }
+  color: #ff3939; }
 
 .sail span:nth-child(2) {
   margin-left: .5em;
@@ -84,17 +83,20 @@ li.slidesjs-pagination-item > a.active {
 .contain .sail {
   position: relative; }
 
+.sail > span {
+  font-size: 0.02899rem; }
+
 .contain .sail button {
   color: #2f2a2a;
-  height: 2.275em;
-  padding: 0 .95em;
+  padding: 0 0.02415rem;
   border: 0.00483rem solid #986e6e;
   background-color: none;
   background: none;
   flex-flow: flex-end;
   text-align: right;
   position: absolute;
-  right: 0; }
+  right: 0;
+  font-size: 0.04831rem; }
 
 .goodsList ul {
   display: flex;
@@ -121,7 +123,10 @@ li.slidesjs-pagination-item > a.active {
 
 h5 {
   line-height: 1.5;
-  color: #0c0c0e; }
+  color: #0c0c0e;
+  font-size: 0.02899rem;
+  letter-spacing: -4px;
+  font-weight: 600; }
 
 .goodsList .sail span:nth-child(2) {
   font-size: 0.02899rem; }
@@ -172,14 +177,19 @@ hr {
 .focusUs img {
   width: 0.19324rem; }
 
+.focusUs p {
+  font-size: 0.01691rem; }
+
 .copyright {
   text-align: center;
-  font-size: 0.03382rem;
   color: #999;
   margin-bottom: 0.19324rem; }
 
 .copyright p:last-child {
   margin: 0.02415rem 0 0.05797rem 0; }
+
+.copyright p {
+  font-size: 0.01932rem; }
 
 .bottomBar {
   display: flex;
