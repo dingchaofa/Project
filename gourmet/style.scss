@@ -1,0 +1,229 @@
+@function rem($pixels){
+    @return $pixels / 414 + rem;
+}
+/* css reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Helvetica Neue',Helvetica,Arial,Sans-serif;
+    margin: 0 auto;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+/* header start */
+header {
+    text-align: center;
+    margin: rem(10) 0 rem(5);
+    font-size: 0;
+}
+header img {
+    height: rem(36);
+}
+/* slides start */
+#slides {
+    display:none;
+    position: relative;
+}
+.slidesjs-navigation {
+    display: none;
+}
+ul.slidesjs-pagination {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: rem(2);
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+}
+li.slidesjs-pagination-item>a {
+    display: inline-block;
+    width: rem(16);
+    height: rem(5);
+    font-size: 0;
+    background-color: #0e0906;
+    margin: rem(6);
+    opacity: 0.5;
+}
+li.slidesjs-pagination-item>a.active {
+    background-color: #fff;
+    opacity: 0.7;
+}
+/* recommend channel */
+.contain {
+    margin: rem(12);
+    padding-bottom: rem(8);
+    font-size: rem(18);
+}
+.contain .delicious img,
+.contain .cake img {
+    width: 100%;
+}
+.contain p {
+    color: #92969C;
+    font-weight: 100;
+    font-size: rem(12);
+    padding: rem(8) 0;
+}
+.contain .sail span:first-child{
+    font-size: rem(20);
+}
+.sail span:first-child {
+    color: #ff3939;
+    font-weight: 700;
+}
+.sail span:nth-child(2) {
+    margin-left: .5em;
+    text-decoration: line-through;
+    color: #999;
+}
+.contain .sail {
+    position: relative;
+}
+.contain .sail button {
+    color: #2f2a2a;
+    height: 2.275em;
+    padding: 0 .95em;
+    border: rem(2) solid #986e6e;
+    background-color: none;
+    background: none;
+    flex-flow: flex-end;
+    text-align: right;
+    position: absolute;
+    right: 0;
+}
+.goodsList ul {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: rem(12);
+    justify-content: space-between;
+}
+.goodsList li {
+    padding-top: rem(15);
+    border-top: 1px solid #ccc;
+    width: 48%;
+    margin: 0 0 rem(10);
+    position: relative;
+    top: -1px;
+    font-size: rem(16);
+}
+.goodsList .sail {
+    padding: rem(4) rem(0);
+}
+.goodsList div>img {
+    width: 100%;
+}
+h5 {
+    line-height: 1.5;
+    color: #0c0c0e;
+}
+.goodsList .sail span:nth-child(2) {
+    font-size: rem(12);
+}
+.moreList {
+    text-align: center;
+    font-weight: 700;
+    font-size: rem(12);
+    margin: rem(20);
+}
+.moreList:after {
+    content: "";
+    display: inline-block;
+    margin-left: rem(4);
+    border-left: rem(6) solid #212121;
+    border-top: rem(4) solid transparent;
+    border-bottom: rem(4) solid transparent;
+}
+.moreList a {
+    color: black;
+}
+/* hunger channel */
+
+.channelTitle {
+    text-align: center;
+    font-size: rem(18);
+    padding: rem(16);
+}
+.channelTitle b {
+    border-bottom: 3px solid #0a0a0a;
+    padding-bottom: rem(3);
+}
+.channelTitle span {
+    border-bottom: 1px solid #0e0d0d;
+    padding-bottom: rem(8);
+}
+hr {
+    height: rem(9);
+    background-color: #f0efeb;
+    border: none;
+}
+/* footer start */
+.focusUs {
+    text-align: center;
+    font-size: rem(12);
+    font-weight: 100;
+    margin: rem(20) 0;
+}
+.focusUs img {
+    width: rem(80);
+}
+.copyright {
+    text-align: center;
+    font-size: rem(14);
+    color: #999;
+    margin-bottom: rem(80);
+}
+.copyright p:last-child {
+    margin: rem(10) 0 rem(24) 0;
+}
+.bottomBar {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #ccc;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #fff;
+    font-weight: 100;
+    font-size: rem(14);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+.bottomBar span {
+    width: rem(30);
+    height: rem(30);
+    background-position: rem(0);
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.home span{
+    background-image: url("image/navbar.png");
+    background-position: 0;
+}
+.mine span{
+    background-image: url("image/navbar.png");
+    background-position-x: rem(-30);
+}
+.order span{
+    background-image: url("image/navbar.png");
+    background-position-x: rem(-60);
+}
+.bottomBar a {
+    color: #cac4c4;
+    display: inline-block;
+    padding: rem(2) rem(26);
+}
+.bottomBar div.active a {
+    color: black;
+}

@@ -3,11 +3,21 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    let scale = 1/ devicePixelRatio
+    document.write(`<meta name="viewport" content=initial-scale=${scale},user-scalable=no>`)
+  </script>
+  
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>半城精选</title>
   <link rel="stylesheet" href="style.css">
-
+  <script>
+      let width = window.screen.width,
+          css = `html {
+              font-size: ${width/scale}px;
+          }`
+      document.write(`<style>${css}</style>`)
+  </script>
   <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
   <script>
     window.jquery || document.write('<script src="jquery.min.js"><\/script>')
@@ -36,7 +46,7 @@
     <img src="image/2640.jpg">
   </section>
   <section id="recommend">
-    <div class="channelTitle"><b><span>精选频道</span></b></div>
+    <div class="channelTitle"><span><b>精选频道</b></span></div>
     <div class="contain">
       <div class="delicious"><img src="image/10640.jpg" alt=""></div>
       <h4>【COCO TOO】 5折超值限量套餐#限时抢购</h4>
@@ -95,7 +105,7 @@
   </section>
   <hr>
   <section id="hunger">
-    <div class="channelTitle"><b><span>甜点频道</span></b></div>
+    <div class="channelTitle"><span><b>甜点频道</b></span></div>
     <div class="contain">
       <div class="cake"><img src="image/11640.jpg" alt=""></div>
       <h4>【COCO TOO】 6折超值限量套餐#限时抢购</h4>
