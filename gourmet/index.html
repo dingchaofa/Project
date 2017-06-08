@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <script>
-    let scale = 1/ devicePixelRatio
+    let scale = 1 / devicePixelRatio
     document.write(`<meta name="viewport" content=initial-scale=${scale},user-scalable=no>`)
   </script>
-  
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>半城精选</title>
   <link rel="stylesheet" href="style.css">
   <script>
-      let width = window.screen.width,
-          css = `html {
-              font-size: ${width/scale}px;
+    let width = window.screen.width,
+      css = `html {
+              font-size: ${width / scale}px;
           }`
-      document.write(`<style>${css}</style>`)
+    document.write(`<style>${css}</style>`)
   </script>
   <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
   <script>
-    window.jquery || document.write('<script src="jquery.min.js"><\/script>')
+      window.jquery || document.write('<script src="jquery.min.js"><\/script>')
   </script>
   <script src="http://apps.bdimg.com/libs/slidesjs/3.0/jquery.slides.min.js"></script>
   <script>
@@ -57,7 +55,6 @@
         <button>详情</button>
       </div>
     </div>
-
     <div class="goodsList">
       <ul>
         <li>
@@ -169,7 +166,11 @@
     </div>
     <div class="copyright">
       <p>半城科技 平台驱动</p>
-      <div>Copyright &copy; <script>document.write(new Date().getFullYear())</script></div>
+      <div>Copyright &copy;
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+      </div>
       <p>开放平台 合作计划</p>
     </div>
     <div class="bottomBar">
@@ -179,3 +180,4 @@
     </div>
   </footer>
 </body>
+</html>
