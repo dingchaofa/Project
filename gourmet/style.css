@@ -1,0 +1,228 @@
+/* css reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Helvetica Neue',Helvetica,Arial,Sans-serif;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+/* header start */
+header {
+    text-align: center;
+    margin: 10px 0 5px;
+}
+header img {
+    height: 36px;
+}
+/* slides start */
+#slides {
+    display:none;
+    position: relative;
+}
+.slidesjs-navigation {
+    display: none;
+}
+ul.slidesjs-pagination {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 6px;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+}
+li.slidesjs-pagination-item>a {
+    display: inline-block;
+    width: 16px;
+    height: 5px;
+    font-size: 0;
+    background-color: #0e0906;
+    margin: 6px;
+    opacity: 0.5;
+}
+li.slidesjs-pagination-item>a.active {
+    background-color: #fff;
+    opacity: 0.7;
+}
+/* recommend channel */
+.contain {
+    margin: 12px;
+    padding-bottom: 8px;
+    font-size: 18px;
+}
+.contain .delicious,
+.contain .cake {
+    background-size: cover;
+    height: 230px;
+    background-repeat: no-repeat;
+}
+#recommend .contain .delicious{
+    background-image: url('image/10640.jpg');
+}
+#hunger .contain .cake{
+    background-image: url('image/11640.jpg');
+}
+.contain p {
+    color: #92969C;
+    font-weight: 100;
+    font-size: 12px;
+    padding: 8px 0;
+}
+.contain .sail span:first-child{
+    font-size: 20px;
+}
+.sail span:first-child {
+    color: #ff3939;
+    font-weight: 700;
+}
+.sail span:nth-child(2) {
+    margin-left: .5em;
+    text-decoration: line-through;
+    color: #999;
+}
+.contain .sail {
+    position: relative;
+}
+.contain .sail button {
+    color: #2f2a2a;
+    height: 2.275em;
+    padding: 0 .95em;
+    border: 2px solid #986e6e;
+    background-color: none;
+    background: none;
+    flex-flow: flex-end;
+    text-align: right;
+    position: absolute;
+    right: 0;
+}
+.goodsList ul {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: 12px;
+    justify-content: space-between;
+}
+.goodsList li {
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+    width: 48%;
+    margin: 0 0 10px;
+    position: relative;
+    top: -1px;
+}
+.goodsList .sail {
+    padding: 4px 0px;
+}
+.goodsList div>img {
+    width: 100%;
+}
+h5 {
+    line-height: 1.5;
+    color: #0c0c0e;
+    font-size: inherit;
+}
+.goodsList .sail span:nth-child(2) {
+    font-size: 12px;
+}
+.moreList {
+    text-align: center;
+    font-weight: 700;
+    font-size: 12px;
+    margin: 20px;
+}
+.moreList:after {
+    content: "";
+    display: inline-block;
+    margin-left: 4px;
+    border-left: 6px solid #212121;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+.moreList a {
+    color: black;
+}
+/* hunger channel */
+
+.channelTitle {
+    text-align: center;
+    font-size: 18px;
+    padding: 16px;
+}
+.channelTitle b {
+    border-bottom: 1px solid #0a0a0a;
+    padding-bottom: 7px;
+}
+.channelTitle span {
+    border-bottom: 3px solid #0e0d0d;
+    padding-bottom: 3px;
+}
+hr {
+    height: 9px;
+    background-color: #f0efeb;
+    border: none;
+}
+/* footer start */
+.focusUs {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 100;
+    margin: 20px 0;
+}
+.focusUs img {
+    width: 80px;
+}
+.copyright {
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 80px;
+}
+.copyright p:last-child {
+    margin: 10px 0 24px 0;
+}
+.bottomBar {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #ccc;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #fff;
+    font-weight: 100;
+}
+.bottomBar span {
+    width: 30px;
+    height: 30px;
+    background-position: 0px;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.home span{
+    background-image: url("image/navbar.png");
+    background-position: 0;
+}
+.mine span{
+    background-image: url("image/navbar.png");
+    background-position-x: -30px;
+}
+.order span{
+    background-image: url("image/navbar.png");
+    background-position-x: -60px;
+}
+.bottomBar a {
+    color: #cac4c4;
+    display: inline-block;
+    padding: 2px 26px;
+}
+.bottomBar div.active a {
+    color: black;
+}
