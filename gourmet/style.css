@@ -6,6 +6,8 @@
 }
 body {
     font-family: 'Helvetica Neue',Helvetica,Arial,Sans-serif;
+    max-width: 980px;
+    margin: 0 auto;
 }
 li {
     list-style: none;
@@ -57,17 +59,9 @@ li.slidesjs-pagination-item>a.active {
     padding-bottom: 8px;
     font-size: 18px;
 }
-.contain .delicious,
-.contain .cake {
-    background-size: cover;
-    height: 230px;
-    background-repeat: no-repeat;
-}
-#recommend .contain .delicious{
-    background-image: url('image/10640.jpg');
-}
-#hunger .contain .cake{
-    background-image: url('image/11640.jpg');
+.contain .delicious img,
+.contain .cake img {
+    width: 100%;
 }
 .contain p {
     color: #92969C;
@@ -197,6 +191,9 @@ hr {
     bottom: 0;
     background-color: #fff;
     font-weight: 100;
+    font-size: 14px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .bottomBar span {
     width: 30px;
