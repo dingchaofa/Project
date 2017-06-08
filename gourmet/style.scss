@@ -124,11 +124,13 @@ li.slidesjs-pagination-item>a.active {
 .goodsList div>img {
     width: 100%;
 }
+h4 {
+    font-size: rem(18);
+}
 h5 {
     line-height: 1.5;
     color: #0c0c0e;
-    font-size: rem(12);
-    letter-spacing: -4px;
+    font-size: rem(11.9);
     font-weight: 600;
 }
 .goodsList .sail span:nth-child(2) {
@@ -167,7 +169,7 @@ h5 {
     padding-bottom: rem(8);
 }
 hr {
-    height: rem(9);
+    height: rem(6);
     background-color: #f0efeb;
     border: none;
 }
@@ -181,8 +183,8 @@ hr {
 .focusUs img {
     width: rem(80);
 }
-.focusUs p {
-    font-size: rem(7);
+.focusUs>p {
+    font-size: rem(12);
 }
 .copyright {
     text-align: center;
@@ -192,8 +194,8 @@ hr {
 .copyright p:last-child {
     margin: rem(10) 0 rem(24) 0;
 }
-.copyright p{
-    font-size: rem(8);
+.copyright>p{
+    font-size: rem(12);
 }
 .bottomBar {
     display: flex;
