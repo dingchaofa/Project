@@ -38,8 +38,7 @@ ul.slidesjs-pagination {
   bottom: 0.00483rem;
   z-index: 10;
   left: 50%;
-  transform: translateX(-50%);
-  bottom: -35%; }
+  transform: translateX(-50%); }
 
 li.slidesjs-pagination-item > a {
   display: inline-block;
@@ -171,6 +170,9 @@ hr {
   border: none; }
 
 /* footer start */
+footer {
+  font-size: 0.03865rem; }
+
 .focusUs {
   text-align: center;
   font-size: 0.02899rem;
@@ -181,7 +183,7 @@ hr {
   width: 0.19324rem; }
 
 .focusUs > p {
-  font-size: 0.02899rem; }
+  font-size: .5em; }
 
 .copyright {
   text-align: center;
@@ -192,7 +194,7 @@ hr {
   margin: 0.02415rem 0 0.05797rem 0; }
 
 .copyright > p {
-  font-size: 0.02899rem; }
+  font-size: .5em; }
 
 .bottomBar {
   display: flex;
