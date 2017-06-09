@@ -38,7 +38,8 @@ ul.slidesjs-pagination {
   bottom: 0.00483rem;
   z-index: 10;
   left: 50%;
-  transform: translateX(-50%); }
+  transform: translateX(-50%);
+  bottom: -35%; }
 
 li.slidesjs-pagination-item > a {
   display: inline-block;
