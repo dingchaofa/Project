@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    ul, li {
+        list-style: none;
+    }
+    .img_rotate {
+        perspective: 1000px;
+        margin-top: 200px;
+    }
+    ul {
+        perspective: 1000px;
+        margin: 0 auto;
+        height: 100px;
+        width: 100px;
+        transform: rotateY(104deg);
+        transform-style: preserve-3d;
+        transition: transform 0.8s;
+    }
+    ul li {
+        transform: translateZ(20px);
+        width: 100px;
+        height: 100px;
+        position: absolute;
+    }
+    .img_rotate li:nth-child(1) {
+        transform:rotateY(0) translateZ(100px);
+    }
+    .img_rotate li:nth-child(2) {
+        transform:rotateY(120deg) translateZ(100px);
+    }
+    .img_rotate li:nth-child(3) {
+        transform:rotateY(240deg) translateZ(100px);
+    }
+    img {
+        width: 100px;
+    }
+</style>
+<body>
+    <div class="img_rotate">
+        <ul>
+            <li><img src="images/loading-y67.png" alt=""/></li>
+            <li><img src="images/loading-x9.png" alt=""/></li>
+            <li><img src="images/loading-xplay6.png" alt=""/></li>
+        </ul>
+        <span></span>
+    </div>
+    <script>
+        var rotate_ul = document.querySelector('ul'),
+                rotate_deg = 0
+        setInterval(function(){
+            rotate_deg += 120
+            rotate_ul.style.transform = "rotateY("+ rotate_deg +"deg)"
+            //console.log(rotate_ul.style.transform)
+        },800)
+    </script>
+</body>
+</html>
