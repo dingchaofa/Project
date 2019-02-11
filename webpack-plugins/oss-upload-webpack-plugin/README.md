@@ -1,4 +1,7 @@
 
+### Install
+
+> npm i oss-upload-webpack-plugin -D
 
 ### Useages
 
@@ -18,7 +21,7 @@ module.exports = {
                 const files = {}
                 return files
             },
-            afterUpload: ()=>{ // 上传之后do something
+            afterUpload: ()=>{ // 上传之后dosomething
 
             }
         })

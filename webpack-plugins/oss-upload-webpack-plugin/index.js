@@ -28,7 +28,6 @@
 } */
 
 const url = require('url');
-const fs = require('fs');
 const _ = require('lodash');
 const async = require('async');
 const createOSS = require('ali-oss');
@@ -70,7 +69,7 @@ class OssUploadWebpackPlugin {
                         }
                         for (let key in files) {
                             let name = url.resolve(url.format(publicPath), key);
-                              console.log(key + '正在上传\n')
+                            //   console.log(key + '正在上传\n')
                             await this.initOss
                                 .put(key, files[key])
                                 .then(result => {
@@ -82,6 +81,7 @@ class OssUploadWebpackPlugin {
                         }
                     }
                 );
+                typeof this.options.afterUpload === 'function' && this.options.afterUpload()
                 callback();
             });
         } catch (err) {
@@ -89,3 +89,5 @@ class OssUploadWebpackPlugin {
         }
     }
 }
+
+module.exports = OssUploadWebpackPlugin
