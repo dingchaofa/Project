@@ -1,0 +1,19 @@
+{
+  "name": "oss-upload-webpack-plugin",
+  "version": "1.0.0",
+  "description": "oss upload hook webpack plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ali-oss",
+    "webpack",
+    "plugin"
+  ],
+  "author": "Ting",
+  "license": "ISC",
+  "dependencies": {
+    "ali-oss": "^6.1.0"
+  }
+}
