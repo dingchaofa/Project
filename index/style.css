@@ -1,0 +1,81 @@
+* {
+    margin:0;
+    padding:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    background: #f1f1f1;
+}
+ul,li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+header h2 {
+    text-align: center;
+    margin: 20px;
+    font-size: 32px;
+}
+#project>ul {
+    width: 1200px;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#project>ul>li {
+    width: 30%;
+    padding:5px 10px;
+    background: #fff;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#project>ul>li:hover {
+    box-shadow: 0 0 8px 4px rgba(189, 141, 141, 0.6);
+    transition: all 0.5s;
+}
+#project>ul>li .img {
+    width: 100%;
+    max-height:300px;
+    overflow: hidden;
+}
+#project>ul>li li:first-child {
+    list-style: none;
+}
+#project>ul>li li {
+    list-style: inside;
+    margin-top: 6px;
+}
+#project>ul>li .intro {
+    margin: 16px 0 7px;
+}
+#project>ul>li .btn {
+    align-self: flex-end;
+    margin: 16px 0 6px;;
+    font-size: 14px;
+}
+#project>ul>li .btn a {
+    color: #666;
+    padding: 0 16px;
+    border: 1px solid #666;
+    border-radius: 30px;
+    margin-left: 16px;
+}
+#project>ul>li .btn a:hover {
+    background: rgba(208, 178, 178, 0.6);
+}
+#project>ul>li .img img {
+    width: 100%;
+}
+#project>ul .null-content {
+    background: #f1f1f1;
+}
+#project>ul .null-content:hover {
+    box-shadow: none;
+}
